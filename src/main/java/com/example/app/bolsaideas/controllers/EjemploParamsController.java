@@ -15,4 +15,15 @@ public class EjemploParamsController {
 		model.addAttribute("resultado", "El texto enviado es "+texto);
 		return "params/ver";
 	}
+	
+	@GetMapping("/mix-params")
+	public String param(@RequestParam String saludo, @RequestParam Integer numero, Model model) {
+		model.addAttribute("resultado", "El saludo enviado es "+saludo+" y el numero es "+numero);
+		return "params/ver";
+	}
+	
+	@GetMapping("/")
+	public String index() {
+		return "params/index";
+	}
 }
